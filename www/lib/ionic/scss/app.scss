@@ -1,0 +1,71 @@
+
+$black: #000000;
+$dark-gray: #4d4d4d;
+$gray: #999999;
+$green: #1cdf86;
+
+
+
+@import "ionic/ionic";
+
+// your slick styles can go here...
+// when Sass processes, both Ionic's Sass and your Sass will combine
+// into one file and saved in your app's directory as css/app.css
+
+
+$header-height: 150px;
+
+
+//
+// MENU
+//
+
+.menu {
+
+	background-color: $dark-gray;
+	h1, span, a, .item {
+		color: white;	
+	}
+
+	& .item-content, & .item {
+		background-color: $dark-gray;
+	}
+}
+
+
+//
+// HEADER
+//
+.bar-header { 
+	&.bar-big {
+		height: $header-height;
+		background-color: $dark-gray;
+	}
+
+	.img-wrapper {
+		background-color: white;
+		border-radius: 50px;
+		padding: 15px;
+		width: 100px;
+		height: 100px;
+		margin: 10px;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.header-title {
+		font-size: 17px;
+		color: white;
+	}
+
+	.header-content {
+		padding: 50px 0 0 10px;
+	}	
+}
+
+
+.menu.has-header {
+	top: $header-height;
+}

@@ -1,0 +1,19 @@
+<ion-view title="Termine">
+
+    <ul class="events-filter">
+      <li class="all-events">Termine FC EDA</li>
+      <li class="my-events">Meine Termine</li>
+      <li class="open-events">Wichtig</li>
+    </ul>
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="event in events" href="#/app/events/{{event.id}}">
+        {{event.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
