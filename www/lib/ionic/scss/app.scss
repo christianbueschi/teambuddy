@@ -2,24 +2,43 @@
 $black: #000000;
 $dark-gray: #4d4d4d;
 $gray: #999999;
+$light-gray: #dedede; // not defined in styleguide
 $green: #1cdf86;
-
+$red: #ff003e;
 
 
 @import "ionic/ionic";
 
-// your slick styles can go here...
-// when Sass processes, both Ionic's Sass and your Sass will combine
-// into one file and saved in your app's directory as css/app.css
+//
+// TYPO
+//
+
+.title {
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.sub-title {
+	font-size: 13px;
+	font-weight: normal;	
+	color: $gray;
+}
+
+a {
+	color: $black;
+	text-decoration: none;
+}
 
 
-$header-height: 150px;
+//
+// GLOBAL
+//
+
 
 
 //
 // MENU
 //
-
 .menu {
 
 	background-color: $dark-gray;
@@ -36,6 +55,9 @@ $header-height: 150px;
 //
 // HEADER
 //
+
+$header-height: 150px;
+
 .bar-header { 
 	&.bar-big {
 		height: $header-height;
@@ -45,7 +67,7 @@ $header-height: 150px;
 	.img-wrapper {
 		background-color: white;
 		border-radius: 50px;
-		padding: 15px;
+		padding: 16px;
 		width: 100px;
 		height: 100px;
 		margin: 10px;
@@ -69,3 +91,225 @@ $header-height: 150px;
 .menu.has-header {
 	top: $header-height;
 }
+
+
+
+//
+// EVENTLIST
+//
+
+$circle-size: 70px;
+
+@mixin transition($property, $duration, $function) {
+	-webkit-transition: $property $duration $function;
+	-moz-transition: $property $duration $function;
+	-ms-transition: $property $duration $function;
+	-o-transition: $property $duration $function;
+	transition: $property $duration $function;
+}
+
+@mixin transform() {
+
+}
+
+
+.btn-circle {
+	
+	float: left;
+	position: relative;
+	border: 2px solid $gray;
+	width: $circle-size;
+	height: $circle-size;
+	border-radius: $circle-size/2;
+	padding: $circle-size/6;
+	background-color: initial;
+
+	.ico-circle {
+		cursor: pointer;
+		position: absolute;
+		top: -5px;
+		right: 2px;
+		padding: $circle-size/6;
+		border-radius: $circle-size/6;
+		-ms-transform: rotate(45deg); /* IE 9 */
+    	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    	transform: rotate(45deg);
+
+    	&:before, &:after {
+			content: '';
+    		position: absolute;
+    		background-color:#fff;
+		}
+    	&.checked {
+    		background-color: $green;
+    		@include transition(all, .5s, ease-out);
+    		&:before {
+    			@include transition(all, .5s, ease-out);
+    			width: 2px;
+    			height: 9px;
+    			left: 11px;
+    			top: 6px;
+    		}
+    		&:after {
+    			@include transition(all, .5s, ease-out);
+    			width: 3px;
+    			height: 2px;
+    			left: 8px;
+    			top: 13px;
+    		}
+    	}
+
+    	&.unchecked {
+    		background-color: $red;
+    		@include transition(all, .5s, ease-out);
+    		&:before {
+    			@include transition(all, .5s, ease-out);
+    			width: 2px;
+    			height: 12px;
+    			left: 10px;
+    			top: 5px;
+    		}
+    		&:after {
+    			@include transition(all, .5s, ease-out);
+    			width: 12px;
+    			height: 2px;
+    			left: 5px;
+    			top: 10px
+    		}
+    	}	
+	}
+
+	.day, .date {
+		display: block;
+		text-align: center;
+	}
+}
+
+.details {
+	margin-left: $circle-size+10px;
+}
+
+.events-filter {
+	position: relative;
+	top: 44px;
+	width: 100%;
+	.filter-item {
+		float: left;
+		width: 33.3%;
+		background-color: $light-gray;
+		text-align: center;
+		border-right: 1px solid white;
+		&:last-child {
+			border: none;
+		}
+		.inner {
+			display: block;
+			line-height: 1;
+			padding: 35px 0 10px;
+		}
+		&.active {
+			background-color: $green;
+			.inner {
+				color: white;
+			}
+		}
+	}
+}
+
+.has-filter {
+	top: 110px;
+}
+
+//
+// EVENT
+//
+
+.event-wrapper {
+	padding: 1em;
+	.label {
+		display: block;
+	}
+}
+
+.btn-check {
+	border: 3px solid $green;
+	width: $circle-size;
+	height: $circle-size;
+	border-radius: $circle-size/2;
+	padding: $circle-size/6;
+	background-color: initial;
+	position: relative;
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+   	transform: rotate(45deg);
+	&:before, &:after {
+		content: '';
+    	position: absolute;
+    	background-color: $green;
+	}
+	&:before {
+		width: 4px;
+    	height: 40px;
+    	left: 39px;
+    	top: 9px;
+	}
+	&:after {
+		width: 20px;
+    	height: 4px;
+    	left:22px;
+    	top: 46px;
+	}
+}
+
+.btn-uncheck {
+	border: 3px solid $gray;
+	width: $circle-size;
+	height: $circle-size;
+	border-radius: $circle-size/2;
+	padding: $circle-size/6;
+	background-color: initial;
+	position: relative;
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+   	transform: rotate(45deg);
+	&:before, &:after {
+		content: '';
+    	position: absolute;
+    	background-color: $gray;
+	}
+	&:before {
+		width: 4px;
+    	height: 40px;
+   		left: 30px;
+   		top: 13px;
+	}
+	&:after {
+		width: 40px;
+    	height: 4px;
+    	left: 13px;
+  		top: 30px;
+	}
+}
+
+
+//
+// OVERRIDES
+//
+
+.item-content {
+	white-space: initial; // forces text-breaking in item-lists
+}
+
+.icon {
+	color: $gray;
+}
+
+.tb-navbar .button {
+	color: $green;
+	&:hover {
+		color: $green;
+	}
+}
+
+
+

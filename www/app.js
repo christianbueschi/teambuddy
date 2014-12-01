@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('teambuddy', ['ionic', 'tb.nav', 'tb.events'])
+angular.module('teambuddy', ['ionic', 'tb.nav', 'tb.eventList', 'tb.event', 'tb.event-service'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,26 +30,26 @@ angular.module('teambuddy', ['ionic', 'tb.nav', 'tb.events'])
       controller: 'NavCtrl as nav'
     })
 
-    .state('app.events', {
-      url: "/events",
+    .state('app.eventList', {
+      url: "/eventList",
       views: {
         'menuContent' :{
-          templateUrl: "mod-events/events.html",
-          controller: 'EventsCtrl'
+          templateUrl: "mod-eventList/eventList.html",
+          controller: 'EventListCtrl'
         }
       }
     })
 
-    .state('app.single', {
-      url: "/playlists/:playlistId",
+    .state('app.event', {
+      url: "/event/:eventId",
       views: {
         'menuContent' :{
-          templateUrl: "mod-event/playlist.html",
-          controller: 'PlaylistCtrl'
+          templateUrl: "mod-event/event.html",
+          controller: 'EventCtrl'
         }
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/events');
+  $urlRouterProvider.otherwise('/app/eventList');
 });
 

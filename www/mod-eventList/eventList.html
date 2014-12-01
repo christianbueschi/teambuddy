@@ -1,0 +1,38 @@
+<ion-view title="Termine">
+
+    <ul class="events-filter">
+      <li class="filter-item all-events">
+      <a href="#" class="inner">Termine FC EDA</a>
+      </li>
+      <li class="filter-item my-events active">
+        <a href="#" class="inner">Meine Termine</a>
+      </li>
+      <li class="filter-item open-events">
+        <a href="#" class="inner">Wichtig</a>
+      </li>
+    </ul>
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header has-filter">
+    <ion-list>
+      <ion-item ng-repeat="event in eventList" class="item-icon-right" href="#/app/event/{{event.id}}">
+        
+        <button class="date btn-circle js-btn" data-ng-click="toggleState($event)" stop-event="click">
+          <span class="ico-circle js-ico checked"></span>
+          <span class="day">Mi</span>
+          <span class="date">{{event.fromDate}}</span>
+        </button>
+        <ul class="details">
+          <li class="team sub-title">{{event.team}}</li>
+          <li class="title">{{event.title}}</li>
+          <li class="time">{{event.fromTime}} bis {{event.toTime}} Uhr</li>
+          <li class="location">{{event.location}}</li>
+        </ul>
+        <i class="icon ion-chevron-right"></i>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

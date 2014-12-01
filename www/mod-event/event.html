@@ -1,0 +1,23 @@
+<ion-view title="{{event.title}}">
+  <ion-content class="has-header">
+  <article class="event-wrapper">
+  	<h2 class="sub-title">{{event.team}}</h2>
+    <h1 class="title">{{event.title}}</h1>
+    <ul>
+    	<li class="day">{{event.fromDate}}</li>
+    	<li><a href="#">{{event.location}}</a></li>
+    	<li>{{event.fromTime}} bis {{event.toTime}} Uhr</li>
+    </ul>
+
+    <div class="in-or-out">
+    	<span class="label">Bist du dabei?</span>
+    	<button class="btn-check">
+    		
+    	</button>
+    	<button class="btn-uncheck">
+    		
+    	</button>
+    </div>
+    </article>
+  </ion-content>
+</ion-view>
