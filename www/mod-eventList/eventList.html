@@ -17,9 +17,9 @@
   </ion-nav-buttons>
   <ion-content class="has-header has-filter">
     <ion-list>
-      <ion-item ng-repeat="event in eventList" class="item-icon-right" href="#/app/event/{{event.id}}">
+      <ion-item ng-repeat="event in listCtrl.eventList" class="item-icon-right" href="#/app/event/{{event.id}}">
         
-        <button class="date btn-circle js-btn" data-ng-click="toggleState($event)" stop-event="click">
+        <button class="date btn-circle js-btn" data-ng-click="listCtrl.toggleState($event)">
           <span class="ico-circle js-ico checked"></span>
           <span class="day">Mi</span>
           <span class="date">{{event.fromDate}}</span>

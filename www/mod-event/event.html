@@ -1,23 +1,51 @@
-<ion-view title="{{event.title}}">
-  <ion-content class="has-header">
-  <article class="event-wrapper">
-  	<h2 class="sub-title">{{event.team}}</h2>
-    <h1 class="title">{{event.title}}</h1>
-    <ul>
-    	<li class="day">{{event.fromDate}}</li>
-    	<li><a href="#">{{event.location}}</a></li>
-    	<li>{{event.fromTime}} bis {{event.toTime}} Uhr</li>
-    </ul>
+<ion-view title="{{eventCtrl.event.title}}">
+<ion-content class="has-header">
+<article class="event-wrapper">
+	<h2 class="sub-title">{{eventCtrl.event.team}}</h2>
+	<h1 class="title">{{eventCtrl.event.title}}</h1>
+	<ul>
+		<li class="day">{{eventCtrl.event.fromDate}}</li>
+		<li><a href="#">{{eventCtrl.event.location}}</a></li>
+		<li>{{eventCtrl.event.fromTime}} bis {{eventCtrl.event.toTime}} Uhr</li>
+	</ul>
 
-    <div class="in-or-out">
-    	<span class="label">Bist du dabei?</span>
-    	<button class="btn-check">
-    		
-    	</button>
-    	<button class="btn-uncheck">
-    		
-    	</button>
-    </div>
-    </article>
-  </ion-content>
+	<div class="in-or-out">
+		<span class="label">Bist du dabei?</span>
+		<button class="btn-check"></button>
+		<button class="btn-uncheck"></button>
+	</div>
+
+	<h3>Eingeladen:</h3>
+	<ul class="invited-list">
+		<li class="js-item">
+		<span class="title-list" data-ng-click="eventCtrl.toggleList($event)">Anwesend<i class="icon ion-chevron-right"></i></span>
+			<ul>
+				<li data-ng-repeat="player in eventCtrl.event.present">
+					{{player.firstName}}
+					{{player.lastName}}
+				</li>		
+			</ul>
+		</li>
+		<li class="js-item">
+		<span class="title-list" data-ng-click="eventCtrl.toggleList($event)">Abwesend<i class="icon ion-chevron-right"></i></span>
+			<ul>
+				<li data-ng-repeat="player in eventCtrl.event.absent">
+					{{player.firstName}}
+					{{player.lastName}}
+				</li>
+			</ul>
+		</li>
+		<li class="js-item">
+		<span class="title-list" data-ng-click="eventCtrl.toggleList($event)">Offen<i class="icon ion-chevron-right"></i></span>
+			<ul>
+				<li data-ng-repeat="player in eventCtrl.event.outstanding">
+					{{player.firstName}}
+					{{player.lastName}}
+				</li>
+			</ul>
+		</li>
+	</ul>
+
+</article>
+</ion-content>
 </ion-view>

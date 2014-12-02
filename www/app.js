@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('teambuddy', ['ionic', 'tb.nav', 'tb.eventList', 'tb.event', 'tb.event-service'])
+angular.module('teambuddy', ['ionic', 'tb.event-service'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,7 +27,7 @@ angular.module('teambuddy', ['ionic', 'tb.nav', 'tb.eventList', 'tb.event', 'tb.
       url: "/app",
       abstract: true,
       templateUrl: "mod-nav/nav.html",
-      controller: 'NavCtrl as nav'
+      controller: 'NavCtrl as navCtrl'
     })
 
     .state('app.eventList', {
@@ -35,7 +35,7 @@ angular.module('teambuddy', ['ionic', 'tb.nav', 'tb.eventList', 'tb.event', 'tb.
       views: {
         'menuContent' :{
           templateUrl: "mod-eventList/eventList.html",
-          controller: 'EventListCtrl'
+          controller: 'EventListCtrl as listCtrl'
         }
       }
     })
@@ -45,7 +45,7 @@ angular.module('teambuddy', ['ionic', 'tb.nav', 'tb.eventList', 'tb.event', 'tb.
       views: {
         'menuContent' :{
           templateUrl: "mod-event/event.html",
-          controller: 'EventCtrl'
+          controller: 'EventCtrl as eventCtrl'
         }
       }
     });

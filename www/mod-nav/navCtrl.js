@@ -1,6 +1,6 @@
-var app = angular.module('tb.nav', []);
 
-app.controller('NavCtrl', function($scope, $ionicModal, $timeout) {
+angular.module('teambuddy')
+.controller('NavCtrl',['$ionicModal', '$timeout', function($ionicModal, $timeout) {
 
   
-});
+}]);

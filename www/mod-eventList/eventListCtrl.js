@@ -1,9 +1,9 @@
-angular.module('tb.eventList', [])
-.controller('EventListCtrl', function($scope, EventService) {
+angular.module('teambuddy')
+.controller('EventListCtrl', ['EventService', function(EventService) {
 
-	$scope.eventList = EventService.getAllEvents();
+	this.eventList = EventService.getAllEvents();
 
-	$scope.toggleState = function(ev) {
+	this.toggleState = function(ev) {
 		ev.stopPropagation();
 		ev.preventDefault();
 		var $target = $(ev.target);
@@ -18,4 +18,4 @@ angular.module('tb.eventList', [])
 	}
   
   
-});
+}]);

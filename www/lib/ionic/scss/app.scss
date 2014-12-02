@@ -1,4 +1,5 @@
 
+// COLORS
 $black: #000000;
 $dark-gray: #4d4d4d;
 $gray: #999999;
@@ -6,6 +7,9 @@ $light-gray: #dedede; // not defined in styleguide
 $green: #1cdf86;
 $red: #ff003e;
 
+// MISC
+$h-spacing: 1em;
+$v-spacing: 1em;
 
 @import "ionic/ionic";
 
@@ -108,8 +112,12 @@ $circle-size: 70px;
 	transition: $property $duration $function;
 }
 
-@mixin transform() {
-
+@mixin transform($args) {
+	-moz-transform: $args;
+	-webkit-transform: $args;
+	-o-transform: $args;
+	-ms-transform: $args;
+	transform: $args;
 }
 
 
@@ -131,9 +139,7 @@ $circle-size: 70px;
 		right: 2px;
 		padding: $circle-size/6;
 		border-radius: $circle-size/6;
-		-ms-transform: rotate(45deg); /* IE 9 */
-    	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-    	transform: rotate(45deg);
+		@include transform(rotate(45deg));
 
     	&:before, &:after {
 			content: '';
@@ -288,6 +294,46 @@ $circle-size: 70px;
     	height: 4px;
     	left: 13px;
   		top: 30px;
+	}
+}
+
+
+
+ul.invited-list {
+
+	.title-list {
+		display: block;
+		padding: $v-spacing/2 $h-spacing*1.5;
+		border-bottom: 1px solid $gray;
+		margin-left: -1em;
+		margin-right: -1em;
+		i {
+			float: right;
+			@include transition(all, .5s, ease);
+		}
+
+		&.state-open {
+			i{
+				@include transform(rotate(90deg));
+			}
+		}
+	}
+
+	li:first-child {
+		.title-list {
+			border-top: 1px solid $gray;
+		}
+	}
+
+	ul {
+		display: none;
+		li {
+			border-bottom: 1px solid $gray;
+			padding: $v-spacing/2 $h-spacing/2;
+			&:last-child {
+				margin-bottom: $v-spacing;
+			}
+		}
 	}
 }
 

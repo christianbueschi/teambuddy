@@ -8929,10 +8929,10 @@ a {
     right: 2px;
     padding: 11.66667px;
     border-radius: 11.66667px;
-    -ms-transform: rotate(45deg);
-    /* IE 9 */
+    -moz-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    /* Chrome, Safari, Opera */
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg); }
     .btn-circle .ico-circle:before, .btn-circle .ico-circle:after {
       content: '';
@@ -9083,6 +9083,35 @@ a {
     height: 4px;
     left: 13px;
     top: 30px; }
+
+ul.invited-list .title-list {
+  display: block;
+  padding: 0.5em 1.5em;
+  border-bottom: 1px solid #999999;
+  margin-left: -1em;
+  margin-right: -1em; }
+  ul.invited-list .title-list i {
+    float: right;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+  ul.invited-list .title-list.state-open i {
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg); }
+ul.invited-list li:first-child .title-list {
+  border-top: 1px solid #999999; }
+ul.invited-list ul {
+  display: none; }
+  ul.invited-list ul li {
+    border-bottom: 1px solid #999999;
+    padding: 0.5em 0.5em; }
+    ul.invited-list ul li:last-child {
+      margin-bottom: 1em; }
 
 .item-content {
   white-space: initial; }
