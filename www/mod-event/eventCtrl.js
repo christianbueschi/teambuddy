@@ -11,5 +11,15 @@ angular.module('teambuddy')
 		$target.closest('.js-item').find('ul').slideToggle(); 
 	}
 
+	this.toggleState = function(ev) {
+		var $target = $(ev.target);
+		if(!$('.js-btn-state').hasClass('active')) {
+			$target.addClass('active');
+		} else {
+			$('.js-btn-state').toggleClass('active');
+		}
+
+	}
+
 	
 }]);

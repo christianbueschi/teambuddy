@@ -8872,14 +8872,24 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   -webkit-transition: none !important;
   transition: none !important; }
 
-.title {
-  font-size: 20px;
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
   font-weight: normal; }
 
-.sub-title {
+.title {
+  font-size: 22px;
+  line-height: 25px; }
+
+.title-sub {
   font-size: 13px;
-  font-weight: normal;
+  line-height: 16px;
   color: #999999; }
+
+.title-list {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 6.66667px; }
 
 a {
   color: #000000;
@@ -8992,6 +9002,8 @@ a {
         height: 2px;
         left: 5px;
         top: 10px; }
+    .btn-circle .ico-circle.undefined {
+      background-color: #999999; }
   .btn-circle .day, .btn-circle .date {
     display: block;
     text-align: center; }
@@ -9008,13 +9020,18 @@ a {
     width: 33.3%;
     background-color: #dedede;
     text-align: center;
-    border-right: 1px solid white; }
+    border-right: 1px solid white;
+    position: relative;
+    height: 60px; }
     .events-filter .filter-item:last-child {
       border: none; }
     .events-filter .filter-item .inner {
       display: block;
       line-height: 1;
-      padding: 35px 0 10px; }
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      right: 5px; }
     .events-filter .filter-item.active {
       background-color: #1cdf86; }
       .events-filter .filter-item.active .inner {
@@ -9027,9 +9044,22 @@ a {
   padding: 1em; }
   .event-wrapper .label {
     display: block; }
+  .event-wrapper .title {
+    color: #999999;
+    margin-bottom: 10px; }
+  .event-wrapper a {
+    color: #1cdf86; }
+  .event-wrapper .meta {
+    margin-bottom: 20px; }
+  .event-wrapper .in-or-out {
+    margin-bottom: 40px; }
+    .event-wrapper .in-or-out .label {
+      margin-bottom: 10px; }
+    .event-wrapper .in-or-out .btn {
+      margin-right: 20px; }
 
 .btn-check {
-  border: 3px solid #1cdf86;
+  border: 7px solid #999999;
   width: 70px;
   height: 70px;
   border-radius: 35px;
@@ -9040,24 +9070,38 @@ a {
   /* IE 9 */
   -webkit-transform: rotate(45deg);
   /* Chrome, Safari, Opera */
-  transform: rotate(45deg); }
+  transform: rotate(45deg);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
   .btn-check:before, .btn-check:after {
     content: '';
     position: absolute;
-    background-color: #1cdf86; }
+    background-color: #999999;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
   .btn-check:before {
-    width: 4px;
+    width: 7px;
     height: 40px;
-    left: 39px;
-    top: 9px; }
+    left: 30px;
+    top: 5px; }
   .btn-check:after {
     width: 20px;
-    height: 4px;
-    left: 22px;
-    top: 46px; }
+    height: 7px;
+    left: 17px;
+    top: 39px; }
+  .btn-check.active {
+    border: 7px solid #1cdf86; }
+    .btn-check.active:before, .btn-check.active:after {
+      background-color: #1cdf86; }
 
 .btn-uncheck {
-  border: 3px solid #999999;
+  border: 7px solid #999999;
   width: 70px;
   height: 70px;
   border-radius: 35px;
@@ -9068,50 +9112,64 @@ a {
   /* IE 9 */
   -webkit-transform: rotate(45deg);
   /* Chrome, Safari, Opera */
-  transform: rotate(45deg); }
+  transform: rotate(45deg);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
   .btn-uncheck:before, .btn-uncheck:after {
     content: '';
     position: absolute;
-    background-color: #999999; }
+    background-color: #999999;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
   .btn-uncheck:before {
-    width: 4px;
+    width: 7px;
     height: 40px;
-    left: 30px;
-    top: 13px; }
+    left: 25px;
+    top: 9px; }
   .btn-uncheck:after {
     width: 40px;
-    height: 4px;
-    left: 13px;
-    top: 30px; }
+    height: 7px;
+    left: 8px;
+    top: 26px; }
+  .btn-uncheck.active {
+    border: 7px solid #ff003e; }
+    .btn-uncheck.active:before, .btn-uncheck.active:after {
+      background-color: #ff003e; }
 
-ul.invited-list .title-list {
+ul.invited-list .title-list-sub {
   display: block;
-  padding: 0.5em 1.5em;
+  padding: 10px 15px;
   border-bottom: 1px solid #999999;
   margin-left: -1em;
   margin-right: -1em; }
-  ul.invited-list .title-list i {
+  ul.invited-list .title-list-sub i {
     float: right;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
-  ul.invited-list .title-list.state-open i {
+  ul.invited-list .title-list-sub.state-open i {
     -moz-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg); }
-ul.invited-list li:first-child .title-list {
+ul.invited-list li:first-child .title-list-sub {
   border-top: 1px solid #999999; }
 ul.invited-list ul {
   display: none; }
   ul.invited-list ul li {
     border-bottom: 1px solid #999999;
-    padding: 0.5em 0.5em; }
+    padding: 10px 10px; }
     ul.invited-list ul li:last-child {
-      margin-bottom: 1em; }
+      margin-bottom: 20px; }
 
 .item-content {
   white-space: initial; }

@@ -9,7 +9,7 @@ angular.module('teambuddy')
 		var $target = $(ev.target);
 		var $ico = $target.closest('.js-btn').find('.js-ico');
 		if($ico.hasClass('undefined') || $ico.hasClass('unchecked')) {
-			$ico.removeClass('undefined, unchecked');
+			$ico.removeClass('undefined unchecked');
 			$ico.addClass('checked');
 		} else {
 			$ico.removeClass('checked');

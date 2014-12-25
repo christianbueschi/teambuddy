@@ -8,8 +8,8 @@ $green: #1cdf86;
 $red: #ff003e;
 
 // MISC
-$h-spacing: 1em;
-$v-spacing: 1em;
+$h-spacing: 20px;
+$v-spacing: 20px;
 
 @import "ionic/ionic";
 
@@ -17,15 +17,27 @@ $v-spacing: 1em;
 // TYPO
 //
 
-.title {
-	font-size: 20px;
-	font-weight: normal;
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+	font-weight: normal; // override
 }
 
-.sub-title {
+.title {
+	font-size: 22px;
+	line-height: 25px
+}
+
+.title-sub {
 	font-size: 13px;
-	font-weight: normal;	
+	line-height: 16px;
 	color: $gray;
+}
+
+.title-list {
+	font-size: 14px;
+	line-height: 18px;
+	margin-bottom: $v-spacing/3;
 }
 
 a {
@@ -182,6 +194,15 @@ $circle-size: 70px;
     			left: 5px;
     			top: 10px
     		}
+    	}
+
+    	&.undefined {
+    		background-color: $gray;
+    		&:before {
+    			//@extend .ion-help;
+    			//color: white;
+    			//@include transform(rotate(-45deg));
+    		}
     	}	
 	}
 
@@ -205,13 +226,18 @@ $circle-size: 70px;
 		background-color: $light-gray;
 		text-align: center;
 		border-right: 1px solid white;
+		position: relative;
+		height: 60px;
 		&:last-child {
 			border: none;
 		}
 		.inner {
 			display: block;
 			line-height: 1;
-			padding: 35px 0 10px;
+			position: absolute;
+			bottom: 5px;
+			left: 5px;
+			right: 5px;
 		}
 		&.active {
 			background-color: $green;
@@ -235,10 +261,29 @@ $circle-size: 70px;
 	.label {
 		display: block;
 	}
+	.title {
+		color: $gray;
+		margin-bottom: $v-spacing/2;
+	}
+	a {
+		color: $green;
+	}
+	.meta {
+		margin-bottom: $v-spacing;
+	}
+	.in-or-out {
+		margin-bottom: $v-spacing*2;
+		.label {
+			margin-bottom: $v-spacing/2;
+		}
+		.btn {
+			margin-right: $h-spacing;
+		}
+	}
 }
 
 .btn-check {
-	border: 3px solid $green;
+	border: 7px solid $gray;
 	width: $circle-size;
 	height: $circle-size;
 	border-radius: $circle-size/2;
@@ -248,62 +293,84 @@ $circle-size: 70px;
 	-ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
    	transform: rotate(45deg);
-	&:before, &:after {
-		content: '';
-    	position: absolute;
-    	background-color: $green;
-	}
-	&:before {
-		width: 4px;
-    	height: 40px;
-    	left: 39px;
-    	top: 9px;
-	}
-	&:after {
-		width: 20px;
-    	height: 4px;
-    	left:22px;
-    	top: 46px;
-	}
-}
+   	@include transition(all, .5s, ease-out);
 
-.btn-uncheck {
-	border: 3px solid $gray;
-	width: $circle-size;
-	height: $circle-size;
-	border-radius: $circle-size/2;
-	padding: $circle-size/6;
-	background-color: initial;
-	position: relative;
-	-ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-   	transform: rotate(45deg);
 	&:before, &:after {
 		content: '';
     	position: absolute;
     	background-color: $gray;
+    	@include transition(all, .5s, ease-out);
 	}
 	&:before {
-		width: 4px;
+		width: 7px;
     	height: 40px;
-   		left: 30px;
-   		top: 13px;
+    	left: 30px;
+    	top: 5px;
+	}
+	&:after {
+		width: 20px;
+    	height: 7px;
+    	left: 17px;
+    	top: 39px;
+	}
+
+	&.active {
+   		border: 7px solid $green;
+
+   		&:before, &:after {
+    		background-color: $green;
+		}
+   	}
+}
+
+.btn-uncheck {
+	border: 7px solid $gray;
+	width: $circle-size;
+	height: $circle-size;
+	border-radius: $circle-size/2;
+	padding: $circle-size/6;
+	background-color: initial;
+	position: relative;
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+   	transform: rotate(45deg);
+   	@include transition(all, .5s, ease-out);
+   	
+	&:before, &:after {
+		content: '';
+    	position: absolute;
+    	background-color: $gray;
+    	@include transition(all, .5s, ease-out);
+	}
+	&:before {
+		width: 7px;
+    	height: 40px;
+   		left: 25px;
+   		top: 9px;
 	}
 	&:after {
 		width: 40px;
-    	height: 4px;
-    	left: 13px;
-  		top: 30px;
+    	height: 7px;
+    	left: 8px;
+  		top: 26px;
 	}
+
+	&.active {
+   		border: 7px solid $red;
+
+   		&:before, &:after {
+    		background-color: $red;
+		}
+   	}
 }
 
 
 
 ul.invited-list {
 
-	.title-list {
+	.title-list-sub {
 		display: block;
-		padding: $v-spacing/2 $h-spacing*1.5;
+		padding: $v-spacing/2 15px;
 		border-bottom: 1px solid $gray;
 		margin-left: -1em;
 		margin-right: -1em;
@@ -320,7 +387,7 @@ ul.invited-list {
 	}
 
 	li:first-child {
-		.title-list {
+		.title-list-sub {
 			border-top: 1px solid $gray;
 		}
 	}
