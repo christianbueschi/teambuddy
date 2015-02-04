@@ -7810,4 +7810,328 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 
 .platform-c:not(.enable-transitions) * {
   -webkit-transition: none !important;
-  transition: none !important; }
+  transition: none !important; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  font-weight: normal; }
+
+.title {
+  font-size: 22px;
+  line-height: 25px; }
+
+.title-sub {
+  font-size: 13px;
+  line-height: 16px;
+  color: #999999; }
+
+.title-list {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 6.66667px; }
+
+.copy-small, .mod-event .info {
+  font-size: 12px;
+  line-height: 14px; }
+
+a {
+  color: #000000;
+  text-decoration: none; }
+
+.menu {
+  background-color: #4d4d4d; }
+  .menu h1, .menu span, .menu a, .menu .item {
+    color: white; }
+  .menu .item-content, .menu .item {
+    background-color: #4d4d4d; }
+
+.bar-header.bar-big {
+  height: 150px;
+  background-color: #4d4d4d; }
+.bar-header .img-wrapper {
+  background-color: white;
+  border-radius: 50px;
+  padding: 16px;
+  width: 100px;
+  height: 100px;
+  margin: 10px; }
+.bar-header img {
+  width: 100%; }
+.bar-header .header-title {
+  font-size: 17px;
+  color: white; }
+.bar-header .header-content {
+  padding: 50px 0 0 10px; }
+
+.menu.has-header {
+  top: 150px; }
+
+.btn-circle {
+  float: left;
+  position: relative;
+  border: 2px solid #999999;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  padding: 11.66667px;
+  background-color: initial; }
+  .btn-circle .ico-circle {
+    cursor: pointer;
+    position: absolute;
+    top: -5px;
+    right: 2px;
+    padding: 11.66667px;
+    border-radius: 11.66667px;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+    .btn-circle .ico-circle:before, .btn-circle .ico-circle:after {
+      content: '';
+      position: absolute;
+      background-color: #fff; }
+    .btn-circle .ico-circle.checked {
+      background-color: #1cdf86;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
+      .btn-circle .ico-circle.checked:before {
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+        width: 2px;
+        height: 9px;
+        left: 11px;
+        top: 6px; }
+      .btn-circle .ico-circle.checked:after {
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+        width: 3px;
+        height: 2px;
+        left: 8px;
+        top: 13px; }
+    .btn-circle .ico-circle.unchecked {
+      background-color: #ff003e;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
+      .btn-circle .ico-circle.unchecked:before {
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+        width: 2px;
+        height: 12px;
+        left: 10px;
+        top: 5px; }
+      .btn-circle .ico-circle.unchecked:after {
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+        width: 12px;
+        height: 2px;
+        left: 5px;
+        top: 10px; }
+    .btn-circle .ico-circle.undefined {
+      background-color: #999999; }
+  .btn-circle .day, .btn-circle .date {
+    display: block;
+    text-align: center; }
+
+.details {
+  margin-left: 80px; }
+
+.events-filter {
+  position: relative;
+  top: 44px;
+  width: 100%; }
+  .events-filter .filter-item {
+    float: left;
+    width: 50%;
+    background-color: #dedede;
+    text-align: center;
+    border-right: 1px solid white;
+    position: relative;
+    height: 60px; }
+    .events-filter .filter-item:last-child {
+      border: none; }
+    .events-filter .filter-item .inner {
+      display: block;
+      line-height: 1;
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      right: 5px; }
+    .events-filter .filter-item.active {
+      background-color: #1cdf86; }
+      .events-filter .filter-item.active .inner {
+        color: white; }
+
+.has-filter {
+  top: 110px; }
+
+.mod-event {
+  padding: 1em; }
+  .mod-event .label {
+    display: block; }
+  .mod-event .title {
+    color: #999999;
+    margin-bottom: 10px; }
+  .mod-event a {
+    color: #1cdf86; }
+  .mod-event .meta {
+    margin-bottom: 20px; }
+  .mod-event .in-or-out {
+    margin-bottom: 40px; }
+    .mod-event .in-or-out .label {
+      margin-bottom: 10px; }
+    .mod-event .in-or-out .btn {
+      margin-right: 20px; }
+  .mod-event .btn-check {
+    border: 7px solid #999999;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    padding: 11.66667px;
+    background-color: initial;
+    position: relative;
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
+    .mod-event .btn-check:before, .mod-event .btn-check:after {
+      content: '';
+      position: absolute;
+      background-color: #999999;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
+    .mod-event .btn-check:before {
+      width: 7px;
+      height: 40px;
+      left: 30px;
+      top: 5px; }
+    .mod-event .btn-check:after {
+      width: 20px;
+      height: 7px;
+      left: 17px;
+      top: 39px; }
+    .mod-event .btn-check.active {
+      border: 7px solid #1cdf86; }
+      .mod-event .btn-check.active:before, .mod-event .btn-check.active:after {
+        background-color: #1cdf86; }
+  .mod-event .btn-uncheck {
+    border: 7px solid #999999;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    padding: 11.66667px;
+    background-color: initial;
+    position: relative;
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
+    .mod-event .btn-uncheck:before, .mod-event .btn-uncheck:after {
+      content: '';
+      position: absolute;
+      background-color: #999999;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
+    .mod-event .btn-uncheck:before {
+      width: 7px;
+      height: 40px;
+      left: 25px;
+      top: 9px; }
+    .mod-event .btn-uncheck:after {
+      width: 40px;
+      height: 7px;
+      left: 8px;
+      top: 26px; }
+    .mod-event .btn-uncheck.active {
+      border: 7px solid #ff003e; }
+      .mod-event .btn-uncheck.active:before, .mod-event .btn-uncheck.active:after {
+        background-color: #ff003e; }
+  .mod-event .info {
+    right: 50px;
+    position: absolute;
+    margin-top: 3px;
+    background: #ff003e;
+    border-radius: 10px;
+    padding: 0 7px;
+    color: white; }
+
+.mod-list .title-list-sub {
+  display: block;
+  padding: 10px 15px;
+  border-bottom: 1px solid #999999;
+  margin-left: -1em;
+  margin-right: -1em; }
+  .mod-list .title-list-sub i {
+    float: right;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+  .mod-list .title-list-sub.state-open i {
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg); }
+.mod-list .invited-list li:first-child .title-list-sub {
+  border-top: 1px solid #999999; }
+.mod-list .invited-list ul {
+  display: none; }
+  .mod-list .invited-list ul li {
+    border-bottom: 1px solid #999999;
+    padding: 10px 10px; }
+    .mod-list .invited-list ul li:last-child {
+      margin-bottom: 20px; }
+
+.item-content {
+  white-space: initial; }
+
+.icon {
+  color: #999999; }
+
+.tb-navbar .button {
+  color: #1cdf86; }
+  .tb-navbar .button:hover {
+    color: #1cdf86; }
+
+/*# sourceMappingURL=app.css.map */
+

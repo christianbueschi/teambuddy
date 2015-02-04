@@ -1,12 +1,12 @@
 <ion-view title="{{eventCtrl.event.title}}">
 <ion-content class="has-header">
-<article class="event-wrapper">
+<article class="mod-event">
 	<h2 class="title-sub">{{eventCtrl.event.team}}</h2>
 	<h1 class="title">{{eventCtrl.event.title}}</h1>
 	<ul class="meta">
-		<li class="day">{{eventCtrl.event.fromDate}}</li>
+		<li class="day">{{eventCtrl.event.from | date:'EEEE, dd. MMMM, yyyy'}}</li>
 		<li><a href="#">{{eventCtrl.event.location}}</a></li>
-		<li>{{eventCtrl.event.fromTime}} bis {{eventCtrl.event.toTime}} Uhr</li>
+		<li>{{eventCtrl.event.from | date:'HH.mm'}} bis {{eventCtrl.event.to | date:'HH.mm'}} Uhr</li>
 	</ul>
 
 	<div class="in-or-out">
@@ -14,37 +14,50 @@
 		<button class="btn btn-check js-btn-state" data-ng-click="eventCtrl.toggleState($event)"></button>
 		<button class="btn btn-uncheck js-btn-state" data-ng-click="eventCtrl.toggleState($event)"></button>
 	</div>
-
-	<h3 class="title-list">Eingeladen:</h3>
-	<ul class="invited-list">
-		<li class="js-item">
-		<span class="title-list-sub" data-ng-click="eventCtrl.toggleList($event)">Anwesend<i class="icon ion-chevron-right"></i></span>
-			<ul>
-				<li data-ng-repeat="player in eventCtrl.event.present">
-					{{player.firstName}}
-					{{player.lastName}}
-				</li>		
-			</ul>
-		</li>
-		<li class="js-item">
-		<span class="title-list-sub" data-ng-click="eventCtrl.toggleList($event)">Abwesend<i class="icon ion-chevron-right"></i></span>
-			<ul>
-				<li data-ng-repeat="player in eventCtrl.event.absent">
-					{{player.firstName}}
-					{{player.lastName}}
-				</li>
-			</ul>
-		</li>
-		<li class="js-item">
-		<span class="title-list-sub" data-ng-click="eventCtrl.toggleList($event)">Offen<i class="icon ion-chevron-right"></i></span>
-			<ul>
-				<li data-ng-repeat="player in eventCtrl.event.outstanding">
-					{{player.firstName}}
-					{{player.lastName}}
-				</li>
-			</ul>
-		</li>
-	</ul>
+	<section class="mod-list">
+		<h3 class="title-list">Eingeladen:</h3>
+		<ul class="invited-list">
+			<li class="js-item">
+				<span class="title-list-sub" data-ng-click="eventCtrl.toggleList($event)">Anwesend
+					<span class="info">{{eventCtrl.event.present.length}}</span>
+					<i class="icon ion-chevron-right"></i>
+				</span>
+				<ul>
+					<li data-ng-repeat="player in eventCtrl.event.present">
+						<i class="icon ion-person"></i>
+						{{player.firstName}}
+						{{player.lastName}}
+					</li>		
+				</ul>
+			</li>
+			<li class="js-item">
+				<span class="title-list-sub" data-ng-click="eventCtrl.toggleList($event)">Abwesend
+					<span class="info">{{eventCtrl.event.absent.length}}</span>
+					<i class="icon ion-chevron-right"></i>
+				</span>
+				<ul>
+					<li data-ng-repeat="player in eventCtrl.event.absent">
+						<i class="icon ion-person"></i>
+						{{player.firstName}}
+						{{player.lastName}}
+					</li>
+				</ul>
+			</li>
+			<li class="js-item">
+				<span class="title-list-sub" data-ng-click="eventCtrl.toggleList($event)">Offen
+					<span class="info">{{eventCtrl.event.outstanding.length}}</span>
+					<i class="icon ion-chevron-right"></i>
+				</span>
+				<ul>
+					<li data-ng-repeat="player in eventCtrl.event.outstanding">
+						<i class="icon ion-person"></i>
+						{{player.firstName}}
+						{{player.lastName}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
 
 </article>
 </ion-content>
