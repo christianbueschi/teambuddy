@@ -1,5 +1,12 @@
 angular.module('tb.event-service', [])
-.factory('EventService', function () {
+.factory('EventService', function ($resource) {
+
+
+	var Teams = $resource('http://teambuddy.ch/teams');
+
+	var teams;
+
+
 
     var EventList = [
             {   id: 1, 
@@ -97,6 +104,10 @@ angular.module('tb.event-service', [])
         ];
 
     return {
+
+		getAllRemoteEvents: function() {
+			return Teams.query();
+		},
         
         getAllEvents: function () {
             return EventList;

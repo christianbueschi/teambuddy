@@ -3,6 +3,16 @@ angular.module('teambuddy')
 
 	this.eventList = EventService.getAllEvents();
 
+	var _this = this
+
+	EventService.getAllRemoteEvents().
+		$promise.
+		then(function(teams) {
+			_this.eventListRemote = teams[1].buddyevents;
+			console.log(_this.eventListRemote);
+		})
+
+
 	this.toggleState = function(ev) {
 		ev.stopPropagation();
 		ev.preventDefault();
